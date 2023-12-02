@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+  }
+.ngx-pagination {
+    text-align: center;
+  }
+  
+  .material-icons{
+    cursor : pointer;
+  }
+  @checkbox{
+    hidden : none;
+  }

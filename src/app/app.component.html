@@ -1,6 +1,6 @@
 <div class="container">
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper ">
     <i class="right large material-icons" (click)="deleteMultiple()">delete</i>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li><input class="" type="text"  placeholder="Search By Name" value="nameValue" [(ngModel)]="nameValue"></li>
@@ -26,7 +26,12 @@
     itemsPerPage:10,
     currentPage:page,
     totalItems:searchedRecords}">
-      <td><input type="checkbox" class="" (click)="check(user.id)"/></td>
+      <td>
+        <label>
+          <input type="checkbox" class="filled-in" (click)="check(user.id)" />
+          <span></span>
+        </label>
+      </td>
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
       <td>{{user.role}}</td>
@@ -59,7 +64,12 @@
     itemsPerPage:10,
     currentPage:page,
     totalItems:totalRecords}">
-      <td><input type="checkbox" class="filled-in" (click)="check(user.id)"/></td>
+    <td>
+      <label>
+        <input type="checkbox" class="filled-in" (click)="check(user.id)" />
+        <span></span>
+      </label>
+    </td>
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
       <td>{{user.role}}</td>

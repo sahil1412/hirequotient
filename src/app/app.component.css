@@ -8,6 +8,3 @@ table {
   .material-icons{
     cursor : pointer;
   }
-  @checkbox{
-    hidden : none;
-  }

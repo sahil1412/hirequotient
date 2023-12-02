@@ -50,17 +50,19 @@ export class AppComponent {
     this.selectedList.push(num);
     this.show(this.data);
     this.arr[num] = true;
+    // console.log(this.selectedList);
   }
 
   unselect(num : any){
-    const updatedSelectList = []
+    const updatedSelectList = Array();
     this.arr[num] = false;
     for(let i=0;i<this.selectedList.length;i++){
-      if(num != this.selectedList[i].id){
-        updatedSelectList.push(this.selectedList[i].id);
+      if(num.toString(10) != this.selectedList[i]){
+        updatedSelectList.push(this.selectedList[i]);
       }
     }
     this.selectedList = updatedSelectList;
+    // console.log(this.selectedList);
     this.show(this.data);
   }
 
@@ -71,8 +73,8 @@ export class AppComponent {
   }
 
   deleteSingle(num : any){
-    console.log(num);
-    const updatedList = [];
+    // console.log(num);
+    const updatedList = Array();
     for(let i=0;i<this.data.length;i++){
       if(this.data[i].id != num){
           updatedList.push(this.data[i])
@@ -80,16 +82,19 @@ export class AppComponent {
       }
     this.data = updatedList;
     this.show(this.data);
-    console.log(this.data)
+    // console.log(this.data)
   }
 
   deleteMultiple(){
-    const updatedList = [];
+    const updatedList = Array();
+    console.log(this.selectedList);
     for(let i=0;i<this.data.length;i++){
       let selected =  0;
       for(let j=0;j<this.selectedList.length;j++){
         if(this.data[i].id == this.selectedList[j]){
           selected = 1;
+          console.log("1"+this.data[i].id);
+          console.log("2"+this.selectedList[j]);
           break;
         }
       }
